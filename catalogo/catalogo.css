@@ -1,11 +1,27 @@
-/*Header*/
+/* CSS para header fixo */
+#header {
+    position: fixed; /* Fixa o header no topo */
+    top: 0; /* Posiciona o header no topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    z-index: 1000; /* Mantém o header acima de outros elementos */
+    background-color: #ffffff; /* Cor de fundo do header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Ajusta o espaço no topo do conteúdo abaixo do header fixo */
+body {
+    padding-top: 130px; /* Aumenta a altura do padding do header (ajuste conforme necessário) */
+}
+
+/* Estilos adicionais */
 .navbar-nav {
     flex-grow: 1;
     justify-content: center;
 }
 
 .home-button {
-    background-color: #e5cf8c; 
+    background-color: #e5cf8c; /* Bootstrap's primary color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -16,16 +32,16 @@
     display: inline-block;
     cursor: pointer;
 }
-.header-text{
+
+.header-text {
     font-family: "IBM Plex Serif", sans-serif;
 }
 
 .navbar-brand, .nav-link, .dropdown-item {
     font-size: 1.5rem; 
 }
-/*Catalog*/
 
-/* Estilo para garantir margens e evitar ampliação da imagem */
+/* Catalog */
 .modal-body {
     padding: 20px;
 }
@@ -43,254 +59,50 @@
     margin-right: auto;
 }
 
-.product .caption {
-    margin-top: 15px;
+/* New styles for centralizing photos on mobile */
+.container-catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center images */
 }
 
-.product .caption h6 {
-    color: #455a64;
+.product img {
+    width: 100%; /* Make images responsive */
+    max-width: 350px; /* Maintain max width for larger screens */
+    height: auto; /* Keep aspect ratio */
 }
 
-.product .caption .price + .price {
-    margin-left: 15px;
-}
-
-.product.tumbnail {
-    box-shadow: 0 5px 25px 0 transparent;
-    transition: 0.3s linear;
-    padding-top: 0;
-}
-
-.product.tumbnail img:hover {
-    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-}
-
-.single-product span {
-    display: inline-block;
-}
-
-.single-product .rating .fa-star, .single-product .rating .fa-star-o {
-    font-size: 16px;
-    color: #f7d4a0;
-    margin-left: 2px;
-}
-
-.single-product .rating + * {
-    margin-left: 15px;
-}
-
-.single-product h1.h1-variant-2 {
-    margin-bottom: 20px;
-}
-
-.single-product .caption:before {
-    content: '';
-    height: 100%;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.single-product .caption span {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.single-product .caption .price {
-    font-weight: 400;
-}
-
-.single-product .caption .price.sale {
-    color: #e75854;
-    font-size: 33px;
-}
-
-.single-product .caption * + .price {
-    margin-left: 10.8%;
-}
-
-@media (max-width: 1199px) {
-    .single-product .caption * + .price {
-    margin-left: 7.8%;
-    }
-}
-
-.single-product .caption * + .quantity {
-    margin-left: 26px;
-}
-
-.single-product .caption .info-list {
-    border-bottom: 1px solid #f3f3ed;
-    border-top: 1px solid #f3f3ed;
-    font-family: Montserrat, sans-serif;
-    padding-top: 26px;
-    padding-bottom: 26px;
-    text-align: left;
-}
-
-.single-product .caption .info-list dt, .single-product .caption .info-list dd {
-    display: inline-block;
-    line-height: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.single-product .caption .info-list dt {
-    letter-spacing: 0.08em;
-    font-size: 12px;
-    color: #a7b0b4;
-    width: 35%;
-    text-transform: uppercase;
-}
-
-.single-product .caption .info-list dd {
-    font-size: 15px;
-    color: #565452;
-    width: 62.5%;
-}
-
-.single-product .caption .share span.small {
-    margin-top: 9px;
-}
-
-@media (max-width: 991px) {
-    .single-product .caption .share span.small {
-    display: block;
-    margin-bottom: 15px;
-    }
-}
-
+/* Centraliza as imagens no mobile */
 @media (max-width: 767px) {
-    .single-product .table-mobile tr {
-    padding-top: 0;
-    }
-    .single-product .table-mobile tr:before {
-    display: none;
-    }
-}
-
-.price {
-    display: inline-block;
-    font-size: 15px;
-    font-family: Montserrat, sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: #2b2f3e;
-}
-
-.price.sale {
-    color: #e75854;
-}
-
-.price del {
-    color: #b0bec5;
-}
-
-.quantity {
-    text-align: center;
-    font-family: Montserrat, sans-serif;
-    font-size: 12px;
-    background: #eceff1;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 82px;
-    height: auto;
-    display: inline-block;
-}
-
-.quantity span {
-    display: inline-block;
-}
-
-.quantity .num {
-    width: 26px;
-}
-
-.quantity [class*='fa-'] {
-    padding-top: 4px;
-    width: 22px;
-    padding-bottom: 4px;
-    color: #b0bec5;
-    cursor: pointer;
-}
-
-.quantity [class*='fa-']:hover {
-    color: #455a64;
-}
-
-.img-fluid{
-    height: 5000%;
-    width: 5000%;
-}
-
-.img {
-    padding-bottom: 30px;
-}
-
-.text-center{
-    padding-bottom: 3%;
-    padding-top: 1%;
-    font-family: "IBM Plex Serif", sans-serif;
-}
-
-@media (max-width: 767px) {
-    .img-fluid {
-        height: auto;
-        width: 90%;
-        margin: 0 auto;
-        display: block;
-    }
-
     .container-catalog {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: center; /* Centraliza as colunas */
         padding: 0;
     }
 
-    .img {
-        padding-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding-left: 40px;
-        padding-right: 40px;
+    .product {
+        display: flex; /* Adiciona flexbox às colunas */
+        justify-content: center; /* Centraliza as imagens horizontalmente */
+        margin-bottom: 20px; /* Espaçamento entre as linhas */
+        width: 100%; /* Ajusta a largura da coluna para ocupar 100% */
+    }
+
+    .product img {
+        width: 90%; /* Ajusta a largura das imagens */
+        height: auto; /* Mantém a proporção da imagem */
+        max-width: 350px; /* Limita a largura máxima da imagem */
     }
 }
 
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .img-fluid {
-        height: auto;
-        width: 100%;
-        margin: 0 auto;
-        display: block;
-    }
-
-    .container-catalog {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0 10%;
-    }
-
-    .img {
-        padding-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    
-}
-
-/*Footer*/
-.logotipo-footer{
+/* Footer styles */
+.logotipo-footer {
     padding-left: 4%;
     padding-top: 2%;
 }
-.logos{
+.logos {
     padding: 0px 0px 0px 0px;
-
 }
 @media (max-width: 600px) {
     footer {
