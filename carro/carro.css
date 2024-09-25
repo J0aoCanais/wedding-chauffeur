@@ -1,4 +1,20 @@
-/*Header*/
+/* CSS para header fixo */
+#header {
+    position: fixed; /* Fixa o header no topo */
+    top: 0; /* Posiciona o header no topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    z-index: 1000; /* Mantém o header acima de outros elementos */
+    background-color: #ffffff; /* Cor de fundo do header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Ajusta o espaço no topo do conteúdo abaixo do header fixo */
+body {
+    padding-top: 80px; /* Altura do header (ajuste conforme necessário) */
+}
+
+/* Estilos adicionais */
 .navbar-nav {
     flex-grow: 1;
     justify-content: center;
@@ -16,7 +32,8 @@
     display: inline-block;
     cursor: pointer;
 }
-.header-text{
+
+.header-text {
     font-family: "IBM Plex Serif", sans-serif;
 }
 
@@ -24,13 +41,15 @@
     font-size: 1.5rem; 
 }
 
-/*Logo*/
-.text-logo{
+/* Logo */
+.text-logo {
     font-family: "Alice", serif;
 }
-.text-heading-logo{
+
+.text-heading-logo {
     font-family: "IBM Plex Serif", sans-serif; 
 }
+
 
 
 /* Carrousel */
